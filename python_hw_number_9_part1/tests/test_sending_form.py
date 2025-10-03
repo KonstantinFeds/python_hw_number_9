@@ -1,5 +1,4 @@
-from selene import have
-from python_hw_number_9_part1.Pages.registration_page import Registration_page
+from python_hw_number_9_part1.pages.registration_page import Registration_page
 
 
 def test_sending_form (open_browser):

@@ -6,6 +6,7 @@ from selene import browser,have
 class Registration_page:
 
     def __init__(self):
+        self.register = None
         browser.open('/')
         browser.execute_script("window.scrollBy(0, 250);")
         current_file = Path(__file__)
