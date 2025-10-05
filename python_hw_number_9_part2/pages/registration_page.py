@@ -7,11 +7,12 @@ from python_hw_number_9_part2.date.users import User
 class Registration_page:
 
     def __init__(self):
-        browser.open('/')
-        browser.execute_script("window.scrollBy(0, 250);")
         current_file = Path(__file__)
         self.resources_dir = current_file.parent.parent / 'resources'
 
+    def open_browser(self):
+        browser.open('/')
+        browser.execute_script("window.scrollBy(0, 250);")
 
     def fill_first_name(self,first_name):
         browser.element('#firstName').click().send_keys(first_name)
@@ -82,6 +83,7 @@ class Registration_page:
         browser.element('#closeLargeModal').click()
 
     def register(self, user: User):
+        self.open_browser()
         self.fill_first_name(user.first_name)
         self.fill_last_name(user.last_name)
         self.fill_email(user.email)
