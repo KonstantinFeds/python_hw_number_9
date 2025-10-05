@@ -6,10 +6,13 @@ from selene import browser,have
 class Registration_page:
 
     def __init__(self):
-        browser.open('/')
-        browser.execute_script("window.scrollBy(0, 250);")
         current_file = Path(__file__)
         self.resources_dir = current_file.parent.parent / 'resources'
+
+    def open_browser(self):
+        browser.open('/')
+        browser.execute_script("window.scrollBy(0, 250);")
+        return self
 
     def fill_first_name(self,first_name):
         browser.element('#firstName').click().send_keys(first_name)
